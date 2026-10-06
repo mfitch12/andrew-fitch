@@ -1,0 +1,141 @@
+/* Hero carousel images — replaces removed object-fit-images polyfill. */
+#page-features .carousel-item img {
+  object-fit: cover;
+}
+
+/* Mobile header: centered logo, left-aligned hamburger, stable open-menu layout.
+   Position controls inside the top .container-fluid row so an open nav cannot
+   pull them down. Cover phones that use .navbar-expand-xl (adjust-header.js). */
+
+/* Collapsed/open mobile header (hamburger visible). */
+@media (max-width: 767.98px) {
+  #header.navbar {
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: visible;
+  }
+
+  /* Keep the top bar a fixed row; open collapse must not stretch this. */
+  #header > .container-fluid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 4.5rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #header .navbar-brand-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-grow: 0 !important;
+    width: auto;
+    max-width: calc(100% - 5.5rem);
+    margin: 0;
+    padding: 0 !important;
+    text-align: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  #header .navbar-brand-container .h3 {
+    margin: 0;
+  }
+
+  #header .navbar-brand-container a {
+    pointer-events: auto;
+  }
+
+  #header .navbar-brand-image {
+    display: block;
+    max-height: 3.25rem;
+    width: auto;
+    height: auto;
+  }
+
+  /* Stay in the top bar row — never absolute against full #header height. */
+  #header .navbar-toggler {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 0 12px;
+    padding: 0;
+    align-self: center;
+  }
+
+  /* Menu opens below the bar; don’t let it affect bar layout. */
+  #header > #primaryNav.navbar-collapse {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+/* Real-device phones: adjust-header switches the header to expand-xl. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  #header.navbar-expand-xl {
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: visible;
+  }
+
+  #header.navbar-expand-xl > .container-fluid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 4.5rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #header.navbar-expand-xl .navbar-brand-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-grow: 0 !important;
+    width: auto;
+    max-width: calc(100% - 5.5rem);
+    margin: 0;
+    padding: 0 !important;
+    text-align: center;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  #header.navbar-expand-xl .navbar-brand-container .h3 {
+    margin: 0;
+  }
+
+  #header.navbar-expand-xl .navbar-brand-container a {
+    pointer-events: auto;
+  }
+
+  #header.navbar-expand-xl .navbar-brand-image {
+    display: block;
+    max-height: 3.25rem;
+    width: auto;
+    height: auto;
+  }
+
+  #header.navbar-expand-xl .navbar-toggler {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 0 12px;
+    padding: 0;
+    align-self: center;
+  }
+
+  #header.navbar-expand-xl > #primaryNav.navbar-collapse {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
